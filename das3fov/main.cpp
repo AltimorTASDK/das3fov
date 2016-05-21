@@ -49,9 +49,9 @@ bool modify_camera(const HANDLE proc, const float fov)
 	const auto prev_mult = tanf(prev_fov / 2.F * deg2rad) / tanf(43.F / 2.F * deg2rad);
 	const auto mult = tanf(fov / 2.F * deg2rad) / tanf(43.F / 2.F * deg2rad);
 
-	for (auto i = 0; i < 58; i++)
+	for (auto i = 0; i < 116; i++)
 	{
-		const auto base = deref3 + i * 0xC8 + 0xB38;
+		const auto base = deref3 + i * 0x64 + 0xB38;
 		const auto dist = read_mem<float>(proc, base);
 		const auto fov = read_mem<float>(proc, base + 0x14);
 
